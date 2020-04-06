@@ -1,0 +1,490 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0A090A;
+  color: white;
+  /* взяли стили шрифта на гугле */
+  font-family: 'Roboto', sans-serif;
+  /* поставл фон, в последнюю очередь, после верстки */
+  background-image: url(../img/main-bg.png);
+  /* для того чтобы браузер не повторял картинку */
+  background-repeat: no-repeat;
+  /* закркпил картинку сверху по центру(адаптивная будет) */
+  background-position: top center;
+  box-sizing: 100%;
+}
+
+.container {
+  /* border: 1px solid red; - после вестки стираем, делали для удобства при верстке */
+  /*макстмальная толщина контейнера */
+  max-width: 1140px;
+  /*выравнивание по центру */
+  margin: auto;
+}
+
+/* стили для шапки */
+.header {
+  display: flex;
+  /* выравниванию по центру по вертикали */
+  align-items: center;
+  justify-content: space-between;
+  /* внутренний отступ для шапки(вернулся после верстки основной части) */
+  padding-top: 45px;
+  /* после верстки info отдвинули в прцентах для адаптива */
+  margin-bottom: 30%;
+}
+
+.logo {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+/* вернулся после верстки кнопки поиска */
+.search {
+  display: flex;
+  align-items: center;
+  /* для растягивания поля поиска адаптивного */
+  flex: 0.8;
+}
+
+.search-input {
+  /* для растягивания поля поиска адаптивного */
+  flex: 1;
+  /* фоновый цвет */
+  background: rgba(196, 196, 196, 0.5);
+  /* скругление */
+  border-radius: 5px;
+  /* внутренний отступ сверху */
+  padding-top: 12px;
+  /* внутренний отступ снизу */
+  padding-bottom: 12px;
+  /* внутренний отступ слева */
+  padding-left: 18px;
+  /* внутренний отступ справа*/
+  padding-right: 18px;
+  /* убираем рамку */
+  border: none;
+  color: #AEAEAE;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+/* загуглиглил placeholder css color и изменил цвет */
+::-webkit-input-placeholder {
+  /* Chrome */
+  color: #AEAEAE;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #AEAEAE;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #AEAEAE;
+  opacity: 1;
+}
+
+:-moz-placeholder {
+  /* Firefox 4 - 18 */
+  color: #AEAEAE;
+  opacity: 1;
+}
+
+.search-button {
+  /* сделал прозрачным фон */
+  background-color: transparent;
+  border: none;
+  /* делаем кнопку больше отступами */
+  padding: 10px 18px;
+}
+
+.bookmark {
+  /* делаем фон прозрачным */
+  background-color: transparent;
+  border: none;
+  /* при наведении меняется курсор */
+  cursor: pointer;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  margin-left: 20px;
+  width: 40px;
+  height: 40px;
+  /* задаём скругление аватарке */
+  border-radius: 50%;
+  /* не растягивает фото, а равномерно заполняет */
+  object-fit: cover;
+}
+
+.title {
+  /* сбрасываю все отступы */
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  line-height: 64px;
+  margin-bottom: 7px;
+}
+
+.title-en {
+  /* Так как span строчный тег, необходимо его сделать строчно-блочным */
+  display: inline-block;
+  font-size: 20px;
+  line-height: 23px;
+  color: #787878;
+  margin-bottom: 38px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  /* убираем кнопку вправа */
+  justify-content: space-between;
+  margin-bottom: 108px;
+}
+
+.move-info {
+  display: flex;
+  align-items: center;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 19px;
+  color: #333333;
+  background: #FFFFFF;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-right: 20px;
+}
+
+.country {
+  font-size: 16px;
+  line-height: 19px;
+  margin-right: 33px;
+}
+
+.play {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  /* убираю подчеркивание текста у кнопки */
+  text-decoration: none;
+}
+
+/* создаем прсевдоэлемент */
+.play:before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/play.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-right: 15px;
+}
+
+.more {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  /* убираю подчеркивание текста у кнопки */
+  text-decoration: none;
+}
+
+/* создаем прсевдоэлемент */
+.more:after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/play.svg);
+  background-repeat: no-repeat;
+  /* делаем картинку по всей ширине блока */
+  box-sizing: 100%;
+  margin-left: 15px;
+  /* переворачиваем картинку на 90 градусов */
+  transform: rotate(90deg);
+}
+
+.content {
+  /* для того чтлбы меню стало рядом */
+  display: flex;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-radius: 3px;
+  color: black;
+  /* отступы с краю и сверху */
+  /* padding: 43px 50px; - при адаптиве перевели в проценты*/
+  padding: 3% 4%;
+}
+
+.short-info {
+  margin-right: 3%;
+}
+
+.poster {
+  display: block;
+  /* margin-top: -78px;- при адаптиве перевели в проценты */
+  margin-top: -40%;
+  margin-bottom: 20px;
+}
+
+.button {
+  background: #FF8F27;
+  padding: 10px 44px;
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 16px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.actors-title {
+  padding-left: 15px;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.actor-list {
+  margin: 0;
+  /* убираем стили */
+  list-style: none;
+  padding-left: 15px;
+  /* делаем подчеркнутыми элементы */
+  text-decoration: underline;
+  line-height: 150%;
+}
+
+.full-info {
+  /* выравниваем меню */
+  flex: 0.95;
+}
+
+.bookmark-added {
+  vertical-align: middle;
+}
+
+.full-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 40px;- при адаптиве перевели в проценты */
+  margin-bottom: 4%;
+}
+
+.tabs-content {
+  /* display: none; написали при работе с js для того чтобы по умолчанию его не было видно */
+  display: none;
+  margin-right: 78px;
+}
+
+.visible {
+  display: block;
+}
+
+.tabs-item {
+  color: black;
+  font-size: 18px;
+  line-height: 21px;
+  text-decoration: none;
+}
+
+/* задаем отступ справа всем элементам, кроме последнего */
+.tabs-item:not(:last-child) {
+  /* margin-right: 38px;- при адаптиве перевели в проценты */
+  margin-right: 5%;
+}
+
+.tabs-item-active {
+  color: #FF8F27;
+}
+
+.text {
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.subscribe-titile {
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 150%;
+  margin-bottom: 14px;
+  margin-top: 0;
+}
+
+.subscribe-form {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.subscribe-input {
+  /* фоновый цвет */
+  background: rgba(196, 196, 196, 0.5);
+  /* скругление слева сверху */
+  border-top-left-radius: 3px;
+  /* скругление слева снизу */
+  border-top-left-radius: 3px;
+  /* внутренний отступ сверху */
+  padding-top: 12px;
+  /* внутренний отступ снизу */
+  padding-bottom: 12px;
+  /* внутренний отступ слева */
+  padding-left: 18px;
+  /* внутренний отступ справа*/
+  padding-right: 18px;
+  /* убираем рамку */
+  border: none;
+  color: #AEAEAE;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.subscribe-button {
+  background: #FF8F27;
+  border-radius: 0px 5px 5px 0px;
+  border: none;
+  padding: 12px;
+}
+
+/* медиа запрос- это изменнения которые начнут действовать при уменьшении экрана(адаптив) */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .tabs-item {
+
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 740px;
+  }
+
+  .tabs {
+    /* если элемент не помещается, то он будет переноситься */
+    flex-wrap: wrap;
+  }
+
+  .tabs-item {
+    /* задаем ширину tabs-item  */
+    flex-basis: 20%;
+    /* устанавливаем высоту строки меньше, чтобы строки отлепились друг от друга */
+    line-height: 2;
+  }
+
+  .full-content {
+    flex-wrap: wrap;
+  }
+
+  .tabs-content {
+    margin-bottom: 5%;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .actor-list {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .more {
+    /* скрыли кнопку подробнее */
+    display: none;
+  }
+
+  .tabs-item {
+    flex-basis: 33%;
+  }
+
+  .tabs-content {
+    margin-right: 0;
+  }
+
+}
+
+@media (max-width: 578px) {
+  .container {
+    width: 90%;
+  }
+
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .search {
+    /* делаем чтобы поиск был во всю ширину */
+    flex-basis: 100%;
+    /* поле поиска делаем последним */
+    order: 3;
+    margin-top: 5%;
+  }
+
+  .content {
+    flex-wrap: wrap;
+  }
+
+  .short-info {
+    margin-bottom: 5%;
+  }
+
+  .actor-list,
+  .actors-title {
+    display: none;
+  }
+
+  .move-info {
+    flex-wrap: wrap;
+  }
+
+  .play {
+    flex-basis: 100%;
+    margin-top: 10%;
+  }
+
+  .short-info {
+    margin-right: 0;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .poster {
+    margin-top: -20%;
+    /* так как постер блочный, для растягивания по центру делаем его блочно-строчным */
+    display: inline-block;
+    width: 100%;
+  }
+}
